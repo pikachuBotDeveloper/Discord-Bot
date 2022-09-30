@@ -9,7 +9,9 @@ from discord import TextChannel
 from youtube_dl import YoutubeDL
 
 load_dotenv()
-client = commands.Bot(command_prefix='.')  # prefix our commands with '.'
+intents = discord.Intents(messages = True, guilds = True, reactions = True, members = True, presences = True)
+intents = discord.Intents().all()
+client = commands.Bot(command_prefix='.', intents=intents)  # prefix our commands with '.'
 
 players = {}
 
